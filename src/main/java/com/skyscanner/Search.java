@@ -1,11 +1,14 @@
 package com.skyscanner;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.NotNull;
 
 public class Search {
 
+    @NotNull
     @JsonProperty
     private String city;
+
 
     public Search() {
     }

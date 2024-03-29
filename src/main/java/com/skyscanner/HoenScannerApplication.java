@@ -25,6 +25,7 @@ public class HoenScannerApplication extends Application<HoenScannerConfiguration
 
     }
 
+
     @Override
     public void run(final HoenScannerConfiguration configuration, final Environment environment) throws Exception{
         ObjectMapper mapper = new ObjectMapper();
@@ -45,8 +46,11 @@ public class HoenScannerApplication extends Application<HoenScannerConfiguration
         searchResults.addAll(carResults);
         searchResults.addAll(hotelResults);
 
-        final SearchResource searchResource = new SearchResource(searchResults);
-        environment.jersey().register(searchResource);
+        System.out.println("searchResults: " + searchResults);
+
+        final SearchResource resource = new SearchResource(searchResults);
+        environment.jersey().register(resource);
+
 
     }
 
